@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @professor.name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @professor.number %>
+</p>
+
+<p>
+  <strong>Numberofbrainseaten:</strong>
+  <%= @professor.numberOfBrainsEaten %>
+</p>
+
+<ul>
+	<% @professor.sections.each do |section| %>
+		<li><%= section.name %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_professor_path(@professor) %> |
+<%= link_to 'Back', professors_path %>
