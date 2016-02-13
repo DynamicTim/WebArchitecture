@@ -11,15 +11,18 @@
 </p>
 
 <p>
-  <strong>Numberofbrainseaten:</strong>
+  <strong>Number Of Brains Eaten:</strong>
   <%= @professor.numberOfBrainsEaten %>
 </p>
 
-<ul>
-	<% @professor.sections.each do |section| %>
-		<li><%= section.name %></li>
-	<% end %>
-</ul>
+<p>
+	<strong>Sections Teaching:
+	<ul>
+		<% @professor.sections.each do |section| %>
+			<li><%= section.name %></li>
+		<% end %>
+	</ul>
+</p>
 
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Back', professors_path %>
