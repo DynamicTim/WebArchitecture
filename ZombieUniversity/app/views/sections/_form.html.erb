@@ -32,7 +32,7 @@
     <%= f.select(:course_id, options_from_collection_for_select(Course.all, :id, :name, :number)) %>
 	</div>
 	<div class="field">
-		<% f.label :student_id %><br>
+		<%= f.label :student_id %>s<br>
 		<%= f.collection_check_boxes(:student_ids, @students, :id, :name) %>
 	</div>
   <div class="actions">

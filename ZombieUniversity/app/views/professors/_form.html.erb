@@ -27,6 +27,10 @@
     <%= f.label :numberOfBrainsEaten %><br>
     <%= f.text_field :numberOfBrainsEaten %>
   </div>
+	<div>
+  	<%= f.label :section_id %>s<br>
+    <%= f.collection_check_boxes(:section_ids, @sections, :id, :name) %>
+ 	</div>
   <div class="actions">
     <%= f.submit %>
   </div>

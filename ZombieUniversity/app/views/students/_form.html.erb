@@ -35,6 +35,10 @@
 		<label>Number Of Limbs</label><br>
     <%= f.text_field :numberOfLimbs %>
   </div>
+	<div>
+		<%= f.label :section_id %>s<br>
+		<%= f.collection_check_boxes(:section_ids, @sections, :id, :name) %>
+	</div>
   <div class="actions">
     <%= f.submit %>
   </div>
