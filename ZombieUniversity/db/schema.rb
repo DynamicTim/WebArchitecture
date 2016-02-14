@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214022804) do
+ActiveRecord::Schema.define(version: 20160214033024) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "creditHours"
+    t.string   "level"
   end
 
   create_table "professors", force: :cascade do |t|
@@ -26,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160214022804) do
     t.float    "numberOfBrainsEaten"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "email"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -58,6 +61,8 @@ ActiveRecord::Schema.define(version: 20160214022804) do
     t.float    "numberOfLimbs"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "email"
+    t.float    "gpa"
   end
 
 end
