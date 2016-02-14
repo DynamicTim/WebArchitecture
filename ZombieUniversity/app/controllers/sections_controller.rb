@@ -15,7 +15,7 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
-		@students = Student.all
+	@students = Student.all
   end
 
   # GET /sections/1/edit
@@ -71,6 +71,6 @@ class SectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:name, :roomNumber, :professor_id, :course_id, :student_ids => [])
+      params.require(:section).permit(:name, :semester, :roomNumber, :professor_id, :course_id, :student_ids => [])
     end
 end
