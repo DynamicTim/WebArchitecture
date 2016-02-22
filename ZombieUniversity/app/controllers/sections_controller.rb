@@ -1,5 +1,10 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+  
+  def search
+    @sections = Section.where("name LIKE ?", "%#{params[:q]}%")
+    render :index
+  end
 
   # GET /sections
   # GET /sections.json

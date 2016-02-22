@@ -1,5 +1,10 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  
+  def search
+    @students = Student.where("name LIKE ?", "%#{params[:q]}%")
+    render :index
+  end
 
   # GET /students
   # GET /students.json

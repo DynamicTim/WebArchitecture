@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Current Professorz</h1>
+<h3>Current Professorz</h3>
+
+<div class="row">
+  <div class="col s3">
+    <%= form_tag(search_professors_path, method: "get") do %>
+      <%= label_tag(:q, "Search for Professorz:", class: "light-green-text text-accent-3") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search", class: "btn black light-green-text text-accent-3") %>
+    <% end %>
+  </div>
+</div>
 
 <table>
   <thead>
@@ -20,9 +30,9 @@
         <td><%= professor.number %></td>
         <td><%= professor.email %></td>
         <td><%= professor.numberOfBrainsEaten %></td>
-        <td><%= link_to 'Show', professor %></td>
-        <td><%= link_to 'Edit', edit_professor_path(professor) %></td>
-        <td><%= link_to 'DESTROY PROFESSOR!', professor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', professor, class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'Edit', edit_professor_path(professor), class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'DESTROY PROFESSOR!', professor, class: "light-green-text text-accent-1", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +40,4 @@
 
 <br>
 
-<%= link_to 'Apply Here', new_professor_path %>
+<%= link_to 'Apply Here', new_professor_path, class: "light-green-text text-accent-1" %>

@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Coursez</h1>
+<h3>Coursez</h3>
+
+<div class="row">
+  <div class="col s3">
+    <%= form_tag(search_courses_path, method: "get") do %>
+      <%= label_tag(:q, "Search for Coursez:", class: "light-green-text text-accent-3") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search", class: "btn black light-green-text text-accent-3") %>
+    <% end %>
+  </div>
+</div>
 
 <table>
   <thead>
@@ -20,9 +30,9 @@
         <td><%= course.description %></td>
         <td><%= course.creditHours %></td>
         <td><%= course.level %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'DESTROY COURSE!', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', course, class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'Edit', edit_course_path(course), class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'DESTROY COURSE!', course, class: "light-green-text text-accent-1", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'New Course', new_course_path, class: "light-green-text text-accent-1" %>

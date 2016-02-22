@@ -15,14 +15,15 @@
 </head>
 <body>
 	<font color="#76ff03"/>
-        <ul class="right">
-            <% if user_signed_in? %>
-                <li>
-                    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "black light-green-text text-accent-2 waves-effect waves-light" %>
-                </li>
+        <% if user_signed_in? %>
+            <div align="left">
+                Welcome! <%= current_user.email %>
+            </div>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "light-green-text text-accent-1 waves-effect waves-light" %>
+            </div>
             
             <% end %>
-        </ul>
+    <%= link_to 'Home', root_path, class: "light-green-text text-accent-1 waves-effect waves-light" %>
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

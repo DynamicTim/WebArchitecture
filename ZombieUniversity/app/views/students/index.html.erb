@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Enrolled Studentz</h1>
+<h3>Enrolled Studentz</h3>
+
+<div class="row">
+  <div class="col s3">
+    <%= form_tag(search_students_path, method: "get") do %>
+      <%= label_tag(:q, "Search for Studentz:", class: "light-green-text text-accent-3") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search", class: "btn black light-green-text text-accent-3") %>
+    <% end %>
+  </div>
+</div>
 
 <table>
   <thead>
@@ -24,9 +34,9 @@
         <td><%= student.gpa %></td>
         <td><%= student.percentDecomposed %></td>
         <td><%= student.numberOfLimbs %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'DESTROY STUDENT!', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', student, class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'DESTROY STUDENT!', student, class: "light-green-text text-accent-1", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +44,4 @@
 
 <br>
 
-<%= link_to 'Entroll New Student', new_student_path %>
+<%= link_to 'Entroll New Student', new_student_path, class: "light-green-text text-accent-1" %>

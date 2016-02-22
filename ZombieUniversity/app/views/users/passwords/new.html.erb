@@ -1,16 +1,24 @@
-<h2>Forgot your password?</h2>
+<br>
+<div align="center">
+    <h3>Zombie University</h3>
+    <h4>Forgot your password?</h4>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="row container">
+      <div class="input-field col s6 offset-s3">
+        <%= f.label :email, class: "light-green-text text-accent-3" %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+      <div class="actions">
+        <button class="btn black light-green-text text-accent-3 waves-effect waves-light" onclick="submit">
+            Send Me Reset Password Instructions
+          </button>
+      </div>
+    <% end %>
 
-<%= render "users/shared/links" %>
+    <%= render "users/shared/links" %>
+</div>

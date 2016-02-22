@@ -1,9 +1,27 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :courses
-  resources :sections
-  resources :professors
-  resources :students
+    authenticate :user do
+      resources :courses do
+        collection do
+          get 'search'
+        end
+      end
+      resources :sections do
+        collection do
+          get 'search'
+        end
+      end
+      resources :professors do
+        collection do
+          get 'search'
+        end
+      end
+      resources :students do
+        collection do
+          get 'search'
+        end
+      end
+    end
   resources :users
   resources :home
 	

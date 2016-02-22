@@ -1,12 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Course Sectionz</h1>
+<h3>Course Sectionz</h3>
+
+<div class="row">
+  <div class="col s3">
+    <%= form_tag(search_sections_path, method: "get") do %>
+      <%= label_tag(:q, "Search for Sectionz:", class: "light-green-text text-accent-3") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search", class: "btn black light-green-text text-accent-3") %>
+    <% end %>
+  </div>
+</div>
 
 <table>
   <thead>
     <tr>
-			<th align="left">Course:</th>
 			<th align="left">Section:</th>
+			<th align="left">Course:</th>
 			<th align="left">Semester:</th>
       <th align="left">Professor Teaching:</th>
       <th align="left">Room Number:</th>
@@ -17,14 +27,14 @@
   <tbody>
     <% @sections.each do |section| %>
       <tr>
-				<td><%= section.course.name %></td>
         <td><%= section.name %></td>
+				<td><%= section.course.name %></td>
 				<td><%= section.semester %></td>
         <td><%= section.professor.name %></td>
         <td><%= section.roomNumber %></td>
-        <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', section, class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'Edit', edit_section_path(section), class: "light-green-text text-accent-1" %></td>
+        <td><%= link_to 'Destroy', section, class: "light-green-text text-accent-1", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Section', new_section_path %>
+<%= link_to 'New Section', new_section_path, class: "light-green-text text-accent-1" %>
