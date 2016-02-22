@@ -8,7 +8,7 @@
 
       <div class="row container">
           <div class="input-field col s6 offset-s3 ">
-            <%= f.label :email %>
+            <%= f.label :email %></br>
             <%= f.email_field :email, autofocus: true %>
           </div>
       </div>
@@ -25,14 +25,17 @@
 
       <div class="row container">
           <div class="input-field col s6 offset-s3">
-            <%= f.label :password_confirmation %>
+            <%= f.label :password_confirmation %></br>
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-        <!--<input type="submit" name="commit" value="Sign up"-->
+      <div class="row actions">
+        <div class="col s12">
+          <button class="btn black light-green-text text-accent-2 waves-effect waves-light" onclick="submit">
+            Register
+          </button>
+        </div>
       </div>
     <% end %>
 

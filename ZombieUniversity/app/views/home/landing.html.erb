@@ -2,11 +2,34 @@
 <div align="center">
     <h1>Zombie University</h1>
     <p>
-        <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= new_user_registration_path %>">
-            Sign Up
-        </a>
-        <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= new_user_session_path %>">
-            Sign In
-        </a>
+        <% if !user_signed_in? %>
+            <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= new_user_registration_path %>">
+                Sign Up
+            </a>
+            <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= new_user_session_path %>">
+                Sign In
+            </a>
+        <% else %>
+            <p>
+                <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= students_path %>">
+               Current Studentz
+                </a>
+            </p>	
+            <p>
+                <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= professors_path %>">
+                Current Professorz
+                </a>
+            </p>
+            <p>
+                <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= courses_path %>">
+                Course Catelog
+                </a>
+            </p>
+            <p>
+                <a class="btn black light-green-text text-accent-2 waves-effect waves-light" href="<%= sections_path %>">
+                Section Listing
+                </a>
+            </p>
+        <% end %>
     </p>
 </div>

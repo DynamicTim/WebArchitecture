@@ -14,11 +14,18 @@
 	</style>
 </head>
 <body>
-
 	<font color="#76ff03"/>
-
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+        <ul class="right">
+            <% if user_signed_in? %>
+                <li>
+                    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "black light-green-text text-accent-2 waves-effect waves-light" %>
+                </li>
+            
+            <% end %>
+        </ul>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 	<%= yield %>
 
