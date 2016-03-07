@@ -1,0 +1,10 @@
+container:start
+container:stop
+exit
+~; container:start; container:reload /
+console
+container:stop
+container:start
+console
+container:stop
+container:start
